@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import SignupPage from './signup';
 import Todo from './Todo';
-// import App from '../App';
 
 
 const Main = () => (

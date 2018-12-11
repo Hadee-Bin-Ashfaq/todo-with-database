@@ -81,16 +81,9 @@ class Todo extends Component {
         }
         if (!editing) {
             const { message } = this.state;
-            // const newTodo = this.state.todo.slice(0);
-            // newTodo.push(this.state.message);
             const key = this.ref.child(uid).push().key;
             this.ref.child(uid).child(key).set({ message, key })
-            // this.setState({
-            //     todo: newTodo,
-            //     message: '',
-            //     editing: false,
-            //     isLoading: false
-            // });
+          
         }
         else {
             const {message,key} = this.state;
@@ -156,7 +149,6 @@ class Todo extends Component {
                         name="message"
                         value={message}
                         className={classes.textField}
-                        // margin="small"
                         variant="filled"
                         onChange={this.getValue}
                     />
@@ -169,20 +161,7 @@ class Todo extends Component {
                         {editing ? 'Update' : 'Add'}
                     </Button>
                 </div>
-                {/* {isLoading ?
-                <div>
-                    <CircularUnderLoad />
-                </div>
-                :
-                Array.isArray(todo) && todo.length > 0 ?
-                <TodoTable 
-                list = {todo}
-                onEdit = {this.onUpdate}
-                onDelete = {this.onDismiss}
-                />
-                : ''
-                } */}
-
+               
                 <div className={classes.rootTable}>
                     <Paper>
                         {todo.length > 0 ?

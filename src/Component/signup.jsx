@@ -22,7 +22,7 @@ class SignupPage extends Component {
     super();
     this.state = {
       uid: '',
-      user: {},
+      user: '',
       email: '',
       password: '',
       isSignIn: true,
@@ -41,9 +41,7 @@ class SignupPage extends Component {
       [name]: value
     })
   }
-  // componentDidMount() {
-  //   this.authlistner();
-  // }
+  
   submitHandler = () => {
     const { email, password, isSignIn, loginError} = this.state;
     this.setState({
@@ -108,16 +106,6 @@ class SignupPage extends Component {
   onError = (errorState, loginError, dialogOpen, isLoading) => {
     this.setState({ errorState, loginError, dialogOpen, isLoading })
   }
-  // authlistner (){
-  //   firebase.auth().onAuthStateChanged((user) =>{
-  //     if(user){
-  //       this.setState({user});
-  //     }
-  //     else {
-  //       this.setState({user:null});
-  //     }
-  //   });
-  // }
 
   render() {
     const { classes } = this.props;
